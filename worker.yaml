@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-redis
+  labels:
+    app: worker-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: worker-redis
+  template:
+    metadata:
+      labels:
+        app: worker-redis
+    spec:
+      containers:
+      - env:
+        - name: REDIS_HOST
+          valueFrom:
+            secretKeyRef:
+              name: pds-redis-demo-secret
+              key: REDIS_HOST
+        - name: REDIS_PASS
+          valueFrom:
+            secretKeyRef:
+              name: pds-redis-demo-secret
+              key: REDIS_PASS
+        name: worker-redis
+        image: jowings/py-redis:0.1
+        imagePullPolicy: Always
+        command: ["python3"]
+        args: ["py-redis.py"]
+     

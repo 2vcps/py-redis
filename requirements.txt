@@ -1,0 +1,4 @@
+redis
+python-snappy
+lz4
+names

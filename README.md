@@ -20,7 +20,7 @@ kuebctl -n py-redis apply -f env-secret.yaml
 kubectl -n py-redis apply -f worker.yaml
 ```
 
-5. Get the name of your Redis pod, in my case it is `red-jowings-o18106-0`, you can find it in the PDS UI. Replace it in the POD= CLI below.
+5. Get the name of your Redis pod, in my case it is `red-jowings-o18106`, you can find it in the PDS UI. Replace it in the POD= CLI below.
 
 Verify your dataservice is working. 
 ```

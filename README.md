@@ -29,7 +29,7 @@ kubectl -n pds-demo exec -it $POD -- bash
 ```
 From the pod command line:
 ```
-redis-cli
+redis-cli --user pds --pass <pds password>
 
 KEYS *
 5100) "Colleen"

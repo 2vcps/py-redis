@@ -9,8 +9,8 @@ import random
 server = str(os.getenv("REDIS_HOST"))
 pass1 = str(os.getenv("REDIS_PASS"))
 
-r = redis.Redis(host=server, port=6379, db=0, password=pass1)
-
+#r = redis.Redis(host=server, port=6379, db=0, password=pass1)
+r = redis.Redis(host=server, port=6379, db=0, username='pds', password=pass1)
 
 
 # print(rand_keyspace)

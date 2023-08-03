@@ -27,7 +27,7 @@ spec:
               name: pds-redis-demo-secret
               key: REDIS_PASS
         name: worker-redis
-        image: jowings/py-redis:0.1
+        image: jowings/py-redis:0.2
         imagePullPolicy: Always
         command: ["python3"]
         args: ["py-redis.py"]
